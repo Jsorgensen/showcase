@@ -1,24 +1,24 @@
 import React, {Component} from 'react';
 
-class EvenAndOdd extends Component{
-    render(){
-        return(
-            <div className='puzzleBox evenAndOddPB'>
-                <h4>Evens and Odds</h4>
-                <input className='inputLine' onChange={(e)=>this.updateUserInput(e.target.value)}></input>
-                <button className='confirmationButton' onClick={()=>this.solveToyProblem()}></button>
-                <span className='resultsBox'>Evens: {this.state.evenArray.join(", ")}</span>
-                <span className='resultsBox'>Odds: {this.state.oddArray.join(", ")}</span>
-            </div>
-        )
-    }
-    constructor(){
+class EvenAndOdd extends Component {
+    constructor() {
         super();
         this.state = ({
             evenArray: [],
             oddArray: [],
             userInput: ''
         })
+    }
+    render(){
+        return(
+            <div className='puzzleBox evenAndOddPB'>
+                <h4>Evens and Odds</h4>
+                <input className='inputLine' onChange={(e)=>this.updateUserInput(e.target.value)}></input>
+                <button className='confirmationButton' onClick={()=>this.solveToyProblem()}> Split </button>
+                <span className='resultsBox'>Evens: {this.state.evenArray.join(", ")}</span>
+                <span className='resultsBox'>Odds: {this.state.oddArray.join(", ")}</span>
+            </div>
+        )
     }
     updateUserInput(val){
         this.setState({userInput: val});
